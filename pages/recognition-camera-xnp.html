@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XNP辨識相機設定 SOP - XNP Recognition Camera Setup SOP</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Chinese Content -->
+    <div data-lang="zh">
+        <div class="breadcrumb">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+
+        <header class="main-header">
+            <h1>Wisenet XNP 相機登入與設定程序</h1>
+            <p>Hanwha XNP-6320 PTZ Camera Configuration Guide</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-info">
+                <strong>📷 文檔說明：</strong>本文檔概述了登入 Wisenet 入口網站和調整相機設定的步驟，適用於所有需要存取 Wisenet 系統的工作人員。
+            </div>
+
+            <h2>簡介</h2>
+            <p>本操作指南將協助您完成 Hanwha Wisenet XNP-6320 PTZ 相機的登入與各項參數設定。此相機專為賭場辨識系統設計，提供完整的影像控制與網路管理功能。</p>
+
+            <h2>一、登入 Wisenet 入口網站</h2>
+            <p>請依照以下步驟存取 Wisenet 入口網站：</p>
+
+            <div class="step-card">
+                <h3>步驟 1：開啟瀏覽器</h3>
+                <p>開啟您的網頁瀏覽器，並在網址列輸入 IP 相機的 IP 位址。</p>
+                <div class="alert alert-info">
+                    <strong>💡 提示：</strong>您可以在我們的試算表中查詢相機 IP 位址<br>
+                    參考文件：<strong>9U Newport Okura</strong>
+                </div>
+                <img src="../assets/images/recognition-camera-xnp/image1.png" alt="Wisenet 登入頁面" class="screenshot">
+            </div>
+
+            <div class="step-card">
+                <h3>步驟 2：輸入登入資訊</h3>
+                <ul>
+                    <li>在登入頁面，於指定欄位輸入您的<strong>使用者名稱</strong></li>
+                    <li>在密碼欄位輸入您的<strong>密碼</strong></li>
+                    <li>點擊<strong>登入</strong>按鈕</li>
+                </ul>
+                <p>成功登入後，您將被導向 Wisenet 儀表板。</p>
+            </div>
+
+            <h2>二、調整相機設定</h2>
+            <p>登入後，您可以依照以下步驟調整相機設定：</p>
+
+            <div class="step-card">
+                <h3>存取設定選單</h3>
+                <ol>
+                    <li>從 Wisenet 儀表板，找到右上角的<strong>設定</strong>選項</li>
+                    <li>點擊<strong>設定</strong>以開啟選單儀表板</li>
+                    <li>選擇您要調整的參數類別</li>
+                </ol>
+                <img src="../assets/images/recognition-camera-xnp/image2.png" alt="Wisenet 設定介面" class="screenshot">
+            </div>
+
+            <h2>三、基本設定 (Basic Settings)</h2>
+            <p>在設定頁面中，您將找到各種自訂選項。常見設定包括：</p>
+
+            <div class="settings-section">
+                <h3>1. 視訊設定檔設置頁面</h3>
+                <ul>
+                    <li><strong>解析度 (Resolution)</strong>：設定影像解析度</li>
+                    <li><strong>編碼 (Codec)</strong>：選擇壓縮格式 (H.264/H.265)</li>
+                    <li><strong>位元率 (Bitrate)</strong>：調整影像品質與頻寬使用</li>
+                    <li><strong>幀率 (Frame Rate)</strong>：設定每秒影格數</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image3.png" alt="視訊設定檔" class="screenshot">
+                <p class="caption">→ 顯示解析度、編碼、位元率和幀率設定，並標示相關箭頭</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>2. 使用者管理頁面</h3>
+                <ul>
+                    <li>突出顯示<strong>新增/編輯/刪除</strong>使用者按鈕</li>
+                    <li>設定<strong>權限等級</strong></li>
+                    <li>管理<strong>密碼欄位</strong></li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image4.png" alt="使用者管理" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>3. 日期與時間配置頁面</h3>
+                <ul>
+                    <li>顯示<strong>時區</strong>設定</li>
+                    <li>選擇<strong>手動</strong>或 <strong>NTP 同步</strong>選項</li>
+                    <li>設定<strong>同步間隔</strong>欄位</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image5.png" alt="日期時間設定" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>4. IP 與連接埠設定頁面</h3>
+                <ul>
+                    <li>顯示<strong>靜態/DHCP</strong>選擇</li>
+                    <li>IP 輸入框</li>
+                    <li>連接埠配置面板</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image6.png" alt="IP 與連接埠設定" class="screenshot">
+            </div>
+
+            <h2>四、PTZ (平移-傾斜-變焦) 設定</h2>
+            <p><strong>PTZ 部分</strong>允許使用者控制和配置相機的移動和變焦功能，以實現精確的監控覆蓋。它分為兩個主要區域：</p>
+
+            <div class="settings-section">
+                <h3>PTZ 設定</h3>
+                <ul>
+                    <li><strong>調整速度</strong>：設定平移、傾斜和變焦速度</li>
+                    <li><strong>預設位置</strong>：設定和調用預設位置</li>
+                    <li><strong>巡邏路線</strong>：定義巡邏路線</li>
+                    <li><strong>自動追蹤</strong>：啟用自動追蹤功能</li>
+                    <li><strong>原位配置</strong>：配置原位以實現最佳監控</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image7.png" alt="PTZ 設定" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>PTZ 限制</h3>
+                <ul>
+                    <li>限制相機移動、變焦和速度</li>
+                    <li>定義<strong>限制區域</strong>或<strong>遮罩區域</strong></li>
+                    <li>保護隱私並確保在受監控環境中安全運行</li>
+                </ul>
+            </div>
+
+            <h2>五、影音設定 (Video & Audio)</h2>
+            <p><strong>影音部分</strong>提供影像品質、聲音、相機行為和高效串流的配置。</p>
+
+            <div class="settings-section">
+                <h3>視訊設定</h3>
+                <ul>
+                    <li><strong>解析度與幀率</strong>：配置影像大小和每秒影格數</li>
+                    <li><strong>壓縮格式</strong>：選擇 H.265/H.264/MJPEG</li>
+                    <li><strong>WDR (寬動態範圍)</strong>：優化高對比度場景</li>
+                    <li><strong>曝光、亮度、對比度</strong>：調整影像參數</li>
+                    <li><strong>降噪</strong>：優化不同照明條件下的影像品質</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image8.png" alt="影音設定" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>音訊設定</h3>
+                <ul>
+                    <li>啟用或禁用<strong>音訊輸入/輸出</strong></li>
+                    <li>調整<strong>麥克風增益</strong></li>
+                    <li>配置<strong>雙向音訊</strong></li>
+                    <li>設定<strong>音訊偵測</strong>以觸發事件</li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <h3>相機設定</h3>
+                <ul>
+                    <li><strong>背光補償</strong>：針對背光場景調整</li>
+                    <li><strong>對焦、光圈</strong>：手動或自動調整</li>
+                    <li><strong>日/夜模式</strong>：配置自動切換</li>
+                    <li><strong>除霧功能</strong>：增強不同環境下的性能</li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <h3>位置設定</h3>
+                <p>為相機指定名稱、群組或建築物中的實體位置，以便在多相機系統中更容易識別和管理。</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>Smart Codec (智慧編碼)</h3>
+                <p>啟用智慧編碼以減少頻寬和儲存使用量，同時保持高影像品質，特別是在低動態場景中。</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>WiseStream</h3>
+                <p>Hanwha 的專有技術，根據場景複雜度動態調整視訊壓縮，在不影響關鍵影像細節的情況下減少高達 75% 的頻寬。</p>
+            </div>
+
+            <h2>六、網路設定 (Network)</h2>
+            <p><strong>網路部分</strong>允許配置連接、安全性和性能設定，以便可靠地整合到網路和遠端監控系統中。</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image9.png" alt="網路設定" class="screenshot">
+
+                <h3>主要網路功能</h3>
+                <ul>
+                    <li><strong>DDNS (動態 DNS)</strong>：即使 IP 位址改變，也能使用一致的網域名稱透過網際網路存取相機</li>
+                    <li><strong>IP 過濾</strong>：透過允許或封鎖特定 IP 位址來限制網路存取，以增強安全性</li>
+                    <li><strong>HTTPS</strong>：啟用加密的網路通訊，以安全存取相機介面</li>
+                    <li><strong>802.1X</strong>：支援企業環境中安全連接的網路認證</li>
+                    <li><strong>QoS (服務品質)</strong>：優先處理視訊流量，確保順暢串流並防止延遲</li>
+                    <li><strong>SNMP</strong>：允許與網路管理系統整合以進行監控和警報</li>
+                    <li><strong>IP 自動設定</strong>：自動配置 DHCP 或靜態 IP 位址，簡化網路部署</li>
+                    <li><strong>憑證管理</strong>：管理用於安全通訊、認證和 HTTPS 連接的數位憑證</li>
+                </ul>
+            </div>
+
+            <h2>七、事件設定 (Event)</h2>
+            <p><strong>事件部分</strong>允許配置觸發器、通知和對安全或系統事件的回應。</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image10.png" alt="事件設定" class="screenshot">
+
+                <h3>事件功能</h3>
+                <ul>
+                    <li><strong>事件設定</strong>：啟用或禁用事件偵測類型，包括動作、篡改、音訊和視訊分析警報</li>
+                    <li><strong>交接 (Handover)</strong>：配置事件轉發到其他設備、伺服器或 VMS，以進行即時監控和回應</li>
+                    <li><strong>FTP / Email</strong>：當事件發生時，自動將快照、視訊片段或事件通知發送到 FTP 伺服器或電子郵件地址</li>
+                    <li><strong>儲存</strong>：配置事件的本地或外部儲存動作，例如將錄影儲存到 SD 卡、NAS 或網路儲存</li>
+                    <li><strong>警報輸出</strong>：控制外部警報、警報器或燈光以回應特定事件</li>
+                    <li><strong>輸入警報</strong>：配置來自感測器或其他警報設備的輸入以觸發事件</li>
+                    <li><strong>時間排程</strong>：定義特定事件活動或不活動的時間段以進行精確監控</li>
+                    <li><strong>網路斷線</strong>：設定網路遺失的動作或通知，以確保快速恢復和警報</li>
+                    <li><strong>App 事件</strong>：啟用推送通知到行動應用程式，以即時了解相機事件</li>
+                </ul>
+            </div>
+
+            <h2>八、分析功能 (Analyze)</h2>
+            <p><strong>分析部分</strong>實現智慧偵測和事件分析，改善安全監控並減少誤報。</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image11.png" alt="分析功能" class="screenshot">
+
+                <h3>智慧分析功能</h3>
+                <ul>
+                    <li><strong>動作偵測</strong>：在相機視野的定義區域內偵測移動，並觸發事件、錄影或警報</li>
+                    <li><strong>篡改偵測</strong>：識別試圖封鎖、覆蓋或重新定位相機的行為，並立即產生通知</li>
+                    <li><strong>IVA (智慧視訊分析)</strong>：支援進階分析，如越線、入侵、徘徊和物體計數，以進行主動監控</li>
+                    <li><strong>音訊偵測</strong>：監控聲音等級和特定音訊事件（例如玻璃破碎、尖叫）以觸發警報或通知</li>
+                </ul>
+            </div>
+
+            <h2>九、系統管理 (System)</h2>
+            <p><strong>系統部分</strong>提供相機管理、維護和監控系統狀態的工具。</p>
+
+            <div class="settings-section">
+                <h3>系統管理功能</h3>
+                <ul>
+                    <li><strong>產品資訊</strong>：顯示有關相機的詳細資訊，包括型號、韌體版本、序號和硬體細節</li>
+                    <li><strong>升級/重新啟動</strong>：允許韌體更新以改善性能或安全性，並提供重新啟動相機的選項以進行維護或故障排除</li>
+                    <li><strong>日誌</strong>：維護系統事件、使用者活動、錯誤和警報的記錄，以供稽核和故障排除</li>
+                </ul>
+            </div>
+
+            <h2>十、開放平台 (Open Platform)</h2>
+            <p><strong>開放平台部分</strong>實現與第三方系統、軟體和應用程式的整合，以提供靈活的監控解決方案。</p>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">🔴 重要檢查項目</h3>
+                <ul style="margin: 10px 0;">
+                    <li>確保相機時間與系統時間同步</li>
+                    <li>驗證所有網路連接正常運作</li>
+                    <li>測試 PTZ 功能是否正常</li>
+                    <li>檢查影像品質和清晰度</li>
+                    <li>確認事件通知設定正確</li>
+                    <li>定期備份相機設定</li>
+                </ul>
+            </div>
+
+            <h2>相關文檔</h2>
+            <ul>
+                <li><a href="angle-adjustment-xnp.html">XNP相機角度調整 SOP</a> - PTZ角度和預設位置設定</li>
+                <li><a href="recognition-camera.html">辨識相機設定 SOP</a> - 一般靜態相機設定參考</li>
+                <li><a href="poker-calibration.html">撲克辨識校準 SOP</a> - 辨識系統校準流程</li>
+            </ul>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div data-lang="en" style="display: none;">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+
+        <header class="main-header">
+            <h1>Wisenet Portal Login and Settings Procedure</h1>
+            <p>Hanwha XNP-6320 PTZ Camera Configuration Guide</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-info">
+                <strong>📷 Introduction:</strong> This document outlines the steps for logging into the Wisenet portal and adjusting user settings. This procedure is intended for all staff members requiring access to the Wisenet system.
+            </div>
+
+            <h2>Introduction</h2>
+            <p>This operational guide will assist you in completing the login and various parameter settings of the Hanwha Wisenet XNP-6320 PTZ camera. This camera is designed for casino recognition systems and provides complete image control and network management functions.</p>
+
+            <h2>1. Logging into the Wisenet Portal</h2>
+            <p>Follow these steps to access the Wisenet portal:</p>
+
+            <div class="step-card">
+                <h3>Step 1: Open Web Browser</h3>
+                <p>Open your web browser and navigate to the Wisenet portal URL:</p>
+                <div class="alert alert-info">
+                    <strong>💡 Tip:</strong> Type the IP address of the IP camera. You can check in our spreadsheet<br>
+                    Reference Document: <strong>9U Newport Okura</strong>
+                </div>
+                <img src="../assets/images/recognition-camera-xnp/image1.png" alt="Wisenet Login Page" class="screenshot">
+            </div>
+
+            <div class="step-card">
+                <h3>Step 2: Enter Login Credentials</h3>
+                <ul>
+                    <li>On the login page, enter your provided <strong>Username</strong> in the designated field</li>
+                    <li>Enter your <strong>Password</strong> in the password field</li>
+                    <li>Click the <strong>Login</strong> button</li>
+                </ul>
+                <p>Upon successful login, you will be directed to the Wisenet dashboard.</p>
+            </div>
+
+            <h2>2. Adjusting Camera Settings</h2>
+            <p>After logging in, you can adjust your camera settings by following these steps:</p>
+
+            <div class="step-card">
+                <h3>Accessing Settings Menu</h3>
+                <ol>
+                    <li>From the Wisenet dashboard, locate your <strong>Settings</strong> in the top right corner</li>
+                    <li>Click on the <strong>Settings</strong> to open a menu dashboard</li>
+                    <li>Select which parameters you want to adjust</li>
+                </ol>
+                <img src="../assets/images/recognition-camera-xnp/image2.png" alt="Wisenet Settings Interface" class="screenshot">
+            </div>
+
+            <h2>3. Basic Settings</h2>
+            <p>On the settings page, you will find various options for customization. Common settings include:</p>
+
+            <div class="settings-section">
+                <h3>1. Video Profile Setup Page</h3>
+                <ul>
+                    <li><strong>Resolution</strong>: Configure image resolution</li>
+                    <li><strong>Codec</strong>: Select compression format (H.264/H.265)</li>
+                    <li><strong>Bitrate</strong>: Adjust image quality and bandwidth usage</li>
+                    <li><strong>Frame Rate</strong>: Set frames per second</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image3.png" alt="Video Profile Settings" class="screenshot">
+                <p class="caption">→ Shows resolution, codec, bitrate, and frame rate settings with labeled arrows</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>2. User Management Page</h3>
+                <ul>
+                    <li>Highlights <strong>Add/Edit/Delete</strong> user buttons</li>
+                    <li>Configure <strong>Permission Levels</strong></li>
+                    <li>Manage <strong>Password Fields</strong></li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image4.png" alt="User Management" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>3. Date & Time Configuration Page</h3>
+                <ul>
+                    <li>Displays <strong>Time Zone</strong> settings</li>
+                    <li>Choose between <strong>Manual</strong> vs. <strong>NTP Sync</strong> options</li>
+                    <li>Configure <strong>Sync Interval</strong> fields</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image5.png" alt="Date & Time Configuration" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>4. IP & Port Settings Page</h3>
+                <ul>
+                    <li>Shows <strong>Static/DHCP</strong> selection</li>
+                    <li>IP input boxes</li>
+                    <li>Port configuration panel</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image6.png" alt="IP & Port Settings" class="screenshot">
+            </div>
+
+            <h2>4. PTZ (Pan-Tilt-Zoom) Settings</h2>
+            <p>The <strong>PTZ section</strong> allows users to control and configure the camera's movement and zoom functions for precise surveillance coverage. It is divided into two main areas:</p>
+
+            <div class="settings-section">
+                <h3>PTZ Settings</h3>
+                <ul>
+                    <li><strong>Adjust Speeds</strong>: Configure pan, tilt, and zoom speeds</li>
+                    <li><strong>Preset Positions</strong>: Set and recall preset positions</li>
+                    <li><strong>Patrol Routes</strong>: Define patrol routes</li>
+                    <li><strong>Auto-Tracking</strong>: Enable auto-tracking functionality</li>
+                    <li><strong>Home Position</strong>: Configure home position for optimal monitoring</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image7.png" alt="PTZ Settings" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>PTZ Restrictions</h3>
+                <ul>
+                    <li>Limit camera movement, zoom, and speed</li>
+                    <li>Define <strong>Restricted Areas</strong> or <strong>Masked Areas</strong></li>
+                    <li>Protect privacy and ensure safe operation within the monitored environment</li>
+                </ul>
+            </div>
+
+            <h2>5. Video & Audio Settings</h2>
+            <p>The <strong>Video & Audio section</strong> provides configuration for image quality, sound, camera behavior, and efficient streaming.</p>
+
+            <div class="settings-section">
+                <h3>Video Settings</h3>
+                <ul>
+                    <li><strong>Resolution & Frame Rate</strong>: Configure image size and frames per second</li>
+                    <li><strong>Compression Format</strong>: Select H.265/H.264/MJPEG</li>
+                    <li><strong>WDR (Wide Dynamic Range)</strong>: Optimize for high-contrast scenes</li>
+                    <li><strong>Exposure, Brightness, Contrast</strong>: Adjust image parameters</li>
+                    <li><strong>Noise Reduction</strong>: Optimize image quality for varying lighting conditions</li>
+                </ul>
+                <img src="../assets/images/recognition-camera-xnp/image8.png" alt="Video & Audio Settings" class="screenshot">
+            </div>
+
+            <div class="settings-section">
+                <h3>Audio Settings</h3>
+                <ul>
+                    <li>Enable or disable <strong>Audio Input/Output</strong></li>
+                    <li>Adjust <strong>Microphone Gain</strong></li>
+                    <li>Configure <strong>Two-Way Audio</strong></li>
+                    <li>Set up <strong>Audio Detection</strong> for event triggers</li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <h3>Camera Settings</h3>
+                <ul>
+                    <li><strong>Backlight Compensation</strong>: Adjust for backlit scenes</li>
+                    <li><strong>Focus, Iris</strong>: Manual or automatic adjustment</li>
+                    <li><strong>Day/Night Mode</strong>: Configure automatic switching</li>
+                    <li><strong>Defog</strong>: Enhance performance in different environments</li>
+                </ul>
+            </div>
+
+            <div class="settings-section">
+                <h3>Location Settings</h3>
+                <p>Assign a camera name, group, or physical location in the building for easier identification and management in multi-camera systems.</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>Smart Codec</h3>
+                <p>Enable intelligent encoding to reduce bandwidth and storage usage while maintaining high image quality, especially in low-motion scenes.</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>WiseStream</h3>
+                <p>Hanwha's proprietary technology that dynamically adjusts video compression based on scene complexity, reducing bandwidth up to 75% without affecting critical image details.</p>
+            </div>
+
+            <h2>6. Network Settings</h2>
+            <p>The <strong>Network section</strong> allows configuration of connectivity, security, and performance settings for reliable integration with the network and remote monitoring systems.</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image9.png" alt="Network Settings" class="screenshot">
+
+                <h3>Key Network Features</h3>
+                <ul>
+                    <li><strong>DDNS (Dynamic DNS)</strong>: Enables access to the camera over the internet with a consistent domain name, even if the IP address changes</li>
+                    <li><strong>IP Filtering</strong>: Restrict network access to authorized devices by allowing or blocking specific IP addresses for enhanced security</li>
+                    <li><strong>HTTPS</strong>: Enable encrypted web communication for secure access to the camera interface</li>
+                    <li><strong>802.1X</strong>: Supports network authentication for secure connection in enterprise environments</li>
+                    <li><strong>QoS (Quality of Service)</strong>: Prioritize video traffic over other network data to ensure smooth streaming and prevent lag</li>
+                    <li><strong>SNMP</strong>: Allows integration with network management systems for monitoring and alerts</li>
+                    <li><strong>IP Automatic Setting</strong>: Configure DHCP or static IP addresses automatically, simplifying network deployment</li>
+                    <li><strong>Certificate Management</strong>: Manage digital certificates for secure communication, authentication, and HTTPS connections</li>
+                </ul>
+            </div>
+
+            <h2>7. Event Settings</h2>
+            <p>The <strong>Event section</strong> allows configuration of triggers, notifications, and responses to security or system events.</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image10.png" alt="Event Settings" class="screenshot">
+
+                <h3>Event Features</h3>
+                <ul>
+                    <li><strong>Event Settings</strong>: Enable or disable event detection types, including motion, tampering, audio, and video analytics alerts</li>
+                    <li><strong>Handover</strong>: Configure event forwarding to other devices, servers, or VMS for immediate monitoring and response</li>
+                    <li><strong>FTP / Email</strong>: Automatically send snapshots, video clips, or event notifications to FTP servers or email addresses when an event occurs</li>
+                    <li><strong>Save</strong>: Configure local or external storage actions for events, such as saving recordings to SD cards, NAS, or network storage</li>
+                    <li><strong>Alarm Output</strong>: Control external alarms, sirens, or lights in response to specific events</li>
+                    <li><strong>Enter Alarm</strong>: Configure inputs from sensors or other alarm devices to trigger events</li>
+                    <li><strong>Time Schedule</strong>: Define time periods when specific events are active or inactive for precise monitoring</li>
+                    <li><strong>Network Disconnection</strong>: Set actions or notifications for network loss to ensure quick recovery and alerting</li>
+                    <li><strong>App Event</strong>: Enable push notifications to mobile apps for instant awareness of camera events</li>
+                </ul>
+            </div>
+
+            <h2>8. Analyze Features</h2>
+            <p>The <strong>Analyze section</strong> enables intelligent detection and analysis of events, improving security monitoring and reducing false alarms.</p>
+
+            <div class="settings-section">
+                <img src="../assets/images/recognition-camera-xnp/image11.png" alt="Analyze Features" class="screenshot">
+
+                <h3>Intelligent Analytics Features</h3>
+                <ul>
+                    <li><strong>Motion Detection</strong>: Detects movement within defined areas of the camera's view and triggers events, recording, or alerts</li>
+                    <li><strong>Tampering Detection</strong>: Identifies attempts to block, cover, or reposition the camera, generating immediate notifications</li>
+                    <li><strong>IVA (Intelligent Video Analytics)</strong>: Supports advanced analytics such as line crossing, intrusion, loitering, and object counting for proactive surveillance</li>
+                    <li><strong>Audio Detection</strong>: Monitors sound levels and specific audio events (e.g., glass breaking, shouting) to trigger alarms or notifications</li>
+                </ul>
+            </div>
+
+            <h2>9. System Management</h2>
+            <p>The <strong>System section</strong> provides tools for camera management, maintenance, and monitoring system status.</p>
+
+            <div class="settings-section">
+                <h3>System Management Features</h3>
+                <ul>
+                    <li><strong>Product Information</strong>: Displays detailed information about the camera, including model number, firmware version, serial number, and hardware details</li>
+                    <li><strong>Upgrade / Restart</strong>: Allows firmware updates to improve performance or security and provides options to restart the camera for maintenance or troubleshooting</li>
+                    <li><strong>Log</strong>: Maintains a record of system events, user activity, errors, and alerts for auditing and troubleshooting purposes</li>
+                </ul>
+            </div>
+
+            <h2>10. Open Platform</h2>
+            <p>The <strong>Open Platform section</strong> enables integration with third-party systems, software, and applications for flexible surveillance solutions.</p>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">🔴 Critical Checklist</h3>
+                <ul style="margin: 10px 0;">
+                    <li>Ensure camera time is synchronized with system time</li>
+                    <li>Verify all network connections are functioning properly</li>
+                    <li>Test PTZ functionality is working correctly</li>
+                    <li>Check image quality and clarity</li>
+                    <li>Confirm event notification settings are correct</li>
+                    <li>Regularly backup camera settings</li>
+                </ul>
+            </div>
+
+            <h2>Related Documentation</h2>
+            <ul>
+                <li><a href="angle-adjustment-xnp.html">XNP Camera Angle Adjustment SOP</a> - PTZ angle and preset position settings</li>
+                <li><a href="recognition-camera.html">Recognition Camera Setup SOP</a> - General static camera settings reference</li>
+                <li><a href="poker-calibration.html">Poker Recognition Calibration SOP</a> - Recognition system calibration procedures</li>
+            </ul>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/language.js"></script>
+</body>
+</html>

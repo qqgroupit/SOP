@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XNP辨識備份與還原 - XNP Recognition Backup and Restore</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <button class="lang-btn active" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+
+  <!-- Chinese Content -->
+  <div data-lang="zh">
+    <div class="breadcrumb">
+      <a href="../index.html">← 返回首頁</a>
+    </div>
+
+    <h1>XNP 辨識備份與還原程序</h1>
+    <p>Hanwha XNP-6320 PTZ 相機 設定備份與還原指南</p>
+
+    <section>
+      <h2>簡介</h2>
+      <p>
+        本文件提供 Hanwha XNP-6320 PTZ 相機設定備份與還原的完整步驟。此流程
+        有助於維持系統穩定性、在故障時快速回復，並簡化多台相機部署時的設定複製。
+      </p>
+    </section>
+
+    <section>
+      <h2>一、登入相機網頁介面</h2>
+      <ol>
+        <li>開啟瀏覽器，輸入 Hanwha XNP-6320 PTZ 相機的 IP 位址。</li>
+        <li>輸入 <strong>使用者名稱</strong> 和 <strong>密碼</strong>。</li>
+        <li>按下 <strong>Login</strong>（登入）。</li>
+        <li>登入成功後會看到即時影像或儀表板。</li>
+        <p><img src="../assets/images/XNP-Recognition-Backup-Restore/image1.png" alt="Backup screenshot" style="max-width:100%;"></p>
+      </ol>
+    </section>
+
+    <section>
+      <h2>二、備份相機設定</h2>
+      <ol>
+        <li>在儀表板中開啟 <strong>Settings</strong>（設定）。</li>
+        <li>前往 <strong>System</strong>（系統）。</li>
+        <li>選擇 <strong>Backup / Restore</strong> 或 <strong>Configuration Management</strong>（設定管理）。</li>
+        <li>點選 <strong>Backup</strong> 或 <strong>Download</strong>（下載）。</li>
+        <li>儲存設定檔（通常為 <code>.conf</code> 或 <code>.xml</code>）。</li>
+        <li>建議以以下格式重新命名檔案：<code>XNP-6320_IPADDRESS_DATE.conf</code></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>三、還原相機設定</h2>
+      <ol>
+        <li>登入相機網頁介面。</li>
+        <li>前往 <strong>Settings → System</strong>（設定 → 系統）。</li>
+        <li>選擇 <strong>Backup / Restore</strong>。</li>
+        <li>按下 <strong>Restore</strong> 或 <strong>Upload</strong>（上傳）。</li>
+        <li>選擇要還原的備份設定檔。</li>
+        <li>點選 <strong>Restore</strong>，等待程序完成。</li>
+        <li><strong>還原期間請勿關閉電源。</strong></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>四、驗證</h2>
+      <ul>
+        <li>確認即時影像正常顯示。</li>
+        <li>檢查網路設定、PTZ 預設位與事件規則是否正確。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>五、最佳實務</h2>
+      <ul>
+        <li><strong>定期備份：</strong>在重大變更或韌體升級前備份設定。</li>
+        <li><strong>安全儲存：</strong>將備份存放於安全位置。</li>
+        <li><strong>文件記錄：</strong>記錄備份日期與版本資訊。</li>
+        <li><strong>測試還原：</strong>定期在非關鍵相機上測試還原流程。</li>
+      </ul>
+    </section>
+
+    <div class="breadcrumb" style="margin-top: 30px;">
+      <a href="../index.html">← 返回首頁</a>
+    </div>
+  </div>
+
+  <!-- English Content -->
+  <div data-lang="en" style="display: none;">
+    <div class="breadcrumb">
+      <a href="../index.html">← Back to Home</a>
+    </div>
+
+    <h1>Backup and Restore Procedures for Hanwha XNP-6320 PTZ Camera</h1>
+    <p>This document provides a comprehensive guide for backing up and restoring the configuration settings of the Hanwha XNP-6320 PTZ camera. This procedure is essential for maintaining system stability, enabling fast recovery after failures, and simplifying deployment of multiple cameras.</p>
+
+    <section>
+      <h2>I. Accessing the Camera Web Interface</h2>
+      <ol>
+        <li>Open a web browser and enter the IP address of the Hanwha XNP-6320 PTZ camera.</li>
+        <li>Enter the <strong>Username</strong> and <strong>Password</strong>.</li>
+        <li>Click <strong>Login</strong>.</li>
+        <li>After successful login, you will see the live view or dashboard.</li>
+        <p><img src="../assets/images/XNP-Recognition-Backup-Restore/image1.png" alt="Backup screenshot" style="max-width:100%;"></p>
+      </ol>
+    </section>
+
+    <section>
+      <h2>II. Backing Up Camera Settings</h2>
+      <ol>
+        <li>From the dashboard, open <strong>Settings</strong>.</li>
+        <li>Navigate to <strong>System</strong>.</li>
+        <li>Select <strong>Backup / Restore</strong> or <strong>Configuration Management</strong>.</li>
+        <li>Click <strong>Backup</strong> or <strong>Download</strong>.</li>
+        <li>Save the configuration file (<code>.conf</code> or <code>.xml</code>).</li>
+        <li>Rename the file using the format: <code>XNP-6320_IPADDRESS_DATE.conf</code></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>III. Restoring Camera Settings</h2>
+      <ol>
+        <li>Log in to the camera web interface.</li>
+        <li>Go to <strong>Settings → System</strong>.</li>
+        <li>Select <strong>Backup / Restore</strong>.</li>
+        <li>Click <strong>Restore</strong> or <strong>Upload</strong>.</li>
+        <li>Select the backup configuration file.</li>
+        <li>Click <strong>Restore</strong> and wait for the process to complete.</li>
+        <li><strong>Do not power off the camera during restore.</strong></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>IV. Verification</h2>
+      <ul>
+        <li>Confirm live video is displayed properly.</li>
+        <li>Verify network settings, PTZ presets, and event rules.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>V. Best Practices</h2>
+      <ul>
+        <li><strong>Regular Backups:</strong> Backup after major changes or before firmware upgrades.</li>
+        <li><strong>Secure Storage:</strong> Store backups in a secure location.</li>
+        <li><strong>Documentation:</strong> Keep records of backup dates and configurations.</li>
+        <li><strong>Test Restores:</strong> Periodically test restores on non-critical cameras.</li>
+      </ul>
+    </section>
+
+    <div class="breadcrumb" style="margin-top: 30px;">
+      <a href="../index.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <script src="../assets/js/language.js"></script>
+</body>
+</html>

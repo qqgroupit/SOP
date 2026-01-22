@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撲克辨識校準 SOP - Poker Recognition Calibration</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Chinese Content -->
+    <div data-lang="zh">
+        <div class="breadcrumb">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+
+        <header class="main-header">
+            <h1>撲克辨識校準</h1>
+            <p>POKER RECOGNITION CALIBRATION</p>
+        </header>
+
+        <div class="content-container">
+            <h2>校準步驟</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">操作說明</th>
+                        <th style="width: 60%;">示意圖</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>進入目錄 <code class="code-highlight">D:\data\srv_version\PokerRecognitionClientV8\8\conf</code></li>
+                                <li>編輯配置文件</li>
+                                <li>刪除座標資訊</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/config-location.png" alt="配置文件位置" style="max-width: 460px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="2">
+                                <li>在 "mode" 中：將 "<code class="code-highlight">recognition</code>" 替換為 <code class="code-highlight">calibration</code></li>
+                                <li>然後保存</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666; margin-bottom: 10px;"><em>配置文件範例</em></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="4">
+                                <li>在佈局上放置卡片 1♠-6♠，交替分配</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/card-layout.png" alt="卡片佈局" style="max-width: 800px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="5">
+                                <li>運行批處理文件</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/run-bat.png" alt="運行批處理文件" style="max-width: 630px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="6">
+                                <li>暫停並確認卡片是否已掃描</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666;"><em>確認掃描結果</em></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="7">
+                                <li>成功校準辨識後，再次進入配置文件</li>
+                                <li>在 "mode" 中：將 "<code class="code-highlight">calibration</code>" 替換為 <code class="code-highlight">recognition</code></li>
+                            </ol>
+                            <div class="alert alert-info" style="margin-top: 15px;">
+                                <strong>✅ 完成：</strong>校準完成，系統已恢復到辨識模式
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666;"><em>恢復辨識模式</em></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning" style="margin-top: 30px;">
+                <h3>⚠️ 重要提示</h3>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>確保卡片清晰可見</li>
+                    <li>校準完成後務必將模式改回 "recognition"</li>
+                    <li>保存配置文件後再運行批處理文件</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div data-lang="en" style="display: none;">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+
+        <header class="main-header">
+            <h1>POKER RECOGNITION CALIBRATION</h1>
+            <p>Standard Operating Procedure</p>
+        </header>
+
+        <div class="content-container">
+            <h2>Calibration Steps</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Instructions</th>
+                        <th style="width: 60%;">Visual Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>Go to <code class="code-highlight">D:\data\srv_version\PokerRecognitionClientV8\8\conf</code></li>
+                                <li>Edit the configuration file</li>
+                                <li>Delete the coordinates</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/config-location.png" alt="Configuration file location" style="max-width: 460px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="2">
+                                <li>In "mode": Replace "<code class="code-highlight">recognition</code>" with <code class="code-highlight">calibration</code></li>
+                                <li>Then save</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666; margin-bottom: 10px;"><em>Configuration file example</em></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="4">
+                                <li>Place the cards 1♠-6♠ on layout, distribute alternately</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/card-layout.png" alt="Card layout" style="max-width: 800px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="5">
+                                <li>Run the bat file</li>
+                            </ol>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="../assets/images/poker-calibration/run-bat.png" alt="Run batch file" style="max-width: 630px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="6">
+                                <li>Pause and confirm if the cards were scanned</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666;"><em>Verify scan results</em></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ol start="7">
+                                <li>After successfully calibrating the recognition, go to the config file again</li>
+                                <li>In "mode": Replace "<code class="code-highlight">calibration</code>" with <code class="code-highlight">recognition</code></li>
+                            </ol>
+                            <div class="alert alert-info" style="margin-top: 15px;">
+                                <strong>✅ Complete:</strong> Calibration finished, system restored to recognition mode
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-size: 10pt; color: #666;"><em>Restore recognition mode</em></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning" style="margin-top: 30px;">
+                <h3>⚠️ Important Notes</h3>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>Ensure cards are clearly visible</li>
+                    <li>Must change mode back to "recognition" after calibration</li>
+                    <li>Save configuration file before running batch file</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/language.js"></script>
+</body>
+</html>

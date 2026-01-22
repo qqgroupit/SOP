@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>裁剪參數 SOP - Crop Parameters SOP</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Chinese Content -->
+    <div data-lang="zh">
+        <div class="breadcrumb">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+
+        <header class="main-header">
+            <h1>裁剪與裁剪參數</h1>
+            <p>CROPPING and CROP PARAMETERS</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-warning">
+                <strong>⚠️ 重要提示:</strong> 這將用於辨識系統中的標記
+            </div>
+
+            <h2>操作步驟</h2>
+
+            <ol>
+                <li>
+                    <strong>確保IP攝像頭的直播功能正常運作</strong>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>訪問裁剪文件夾</li>
+                        <li>路徑: <code class="code-highlight">Desktop\Crop-Labelling\ffmpeg-N-102618-ge41255cddb-win64-gpl\bin</code></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <strong>在桌面上放置卡片並運行 <code class="code-highlight">01.bat</code> 文件</strong>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step1.png" alt="運行01.bat文件" style="max-width: 800px;">
+                    </p>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li><code class="code-highlight">01.bat</code> 文件將錄製一段視頻 (.mp4)，視頻將保存到 <code class="code-highlight">INPUT</code> 文件夾</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step2.png" alt="視頻保存" style="max-width: 800px;">
+                    </p>
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>打開 INPUT 文件夾查看視頻（保存的視頻名稱為 DUMP）</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step3.png" alt="查看視頻" style="max-width: 1000px;">
+                    </p>
+                </li>
+
+                <li>
+                    <strong>檢查 INPUT 文件夾中保存的視頻文件</strong>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>驗證保存的視頻後，運行 <code class="code-highlight">02.bat</code> 文件</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step4.png" alt="運行02.bat" style="max-width: 1000px;">
+                    </p>
+                    <p>此批處理文件將自動運行 INPUT 文件夾中保存的視頻。</p>
+
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>使用 <strong>VLC</strong> 播放視頻，並從 VLC 截取每一輪卡片的截圖（<kbd>Shift+S</kbd>）（百家樂規則）。</li>
+                    </ol>
+                </li>
+
+                <li>
+                    <strong>所有截圖應放置在 INPUT 文件夾中</strong>
+                    <p>（VLC 截圖路徑可以修改為 INPUT 文件夾）</p>
+
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>運行 <code class="code-highlight">03.bat</code>，此批處理文件將裁剪 INPUT 文件夾中的截圖圖像</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step5.png" alt="運行03.bat" style="max-width: 1000px;">
+                    </p>
+
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>運行 <code class="code-highlight">03.bat</code> 文件後，您需要輸入特定的裁剪參數，然後按 Enter。</li>
+                        <li>示例參數: <code>750:200:575:420</code></li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step6.png" alt="輸入參數" style="max-width: 1000px;">
+                    </p>
+
+                    <ol style="list-style-type: lower-alpha;" start="4">
+                        <li>裁剪後的圖像將保存到 <code class="code-highlight">OUTPUT</code> 文件夾</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step7.png" alt="輸出結果" style="max-width: 1300px;">
+                    </p>
+                </li>
+            </ol>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">📊 重要提醒</h3>
+                <p style="margin: 0; font-size: 18pt; font-weight: 700;">電子表格中的裁剪參數也應該更新。</p>
+            </div>
+
+            <h2 style="margin-top: 40px;">01.bat 文件配置</h2>
+            <p>
+                <img src="../assets/images/crop/crop-config.png" alt="01.bat配置" style="max-width: 800px;">
+            </p>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div data-lang="en" style="display: none;">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+
+        <header class="main-header">
+            <h1>CROPPING and CROP PARAMETERS</h1>
+            <p>Standard Operating Procedure for Image Cropping</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-warning">
+                <strong>⚠️ Important:</strong> This will be for labelling that will be used in RECOGNITION SYSTEM
+            </div>
+
+            <h2>Procedure Steps</h2>
+
+            <ol>
+                <li>
+                    <strong>Make sure IP Cam for livestream is working properly</strong>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>Access the folder for cropping</li>
+                        <li>Path: <code class="code-highlight">Desktop\Crop-Labelling\ffmpeg-N-102618-ge41255cddb-win64-gpl\bin</code></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <strong>Place cards on the table and run <code class="code-highlight">01.bat</code> file inside the folder</strong>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step1.png" alt="Run 01.bat file" style="max-width: 800px;">
+                    </p>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>The <code class="code-highlight">01.bat</code> file will record a video (.mp4) and the video will be saved to <code class="code-highlight">INPUT</code> folder</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step2.png" alt="Video saved" style="max-width: 800px;">
+                    </p>
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>Open input folder to see the video (the saved video name is DUMP)</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step3.png" alt="View video" style="max-width: 1000px;">
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Check the saved video file in the input folder</strong>
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>After verifying the saved video, run the <code class="code-highlight">02.bat</code> file</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step4.png" alt="Run 02.bat" style="max-width: 1000px;">
+                    </p>
+                    <p>This bat file will automatically run the saved video from the input folder.</p>
+
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>Play the video using <strong>VLC</strong> and from VLC take a screenshot (<kbd>Shift+S</kbd>) of the cards every round (BACCARAT RULES).</li>
+                    </ol>
+                </li>
+
+                <li>
+                    <strong>All screenshot images should be placed in the INPUT folder</strong>
+                    <p>(VLC screenshot path can be modified to INPUT folder).</p>
+
+                    <ol style="list-style-type: lower-alpha;">
+                        <li>Run <code class="code-highlight">03.bat</code>, this bat file will crop the screenshot image from INPUT folder</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step5.png" alt="Run 03.bat" style="max-width: 1000px;">
+                    </p>
+
+                    <ol style="list-style-type: lower-alpha;" start="2">
+                        <li>After running the <code class="code-highlight">03.bat</code> file, you need to enter the specific crop parameters, then press Enter.</li>
+                        <li>Example parameters: <code>750:200:575:420</code></li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step6.png" alt="Enter parameters" style="max-width: 1000px;">
+                    </p>
+
+                    <ol style="list-style-type: lower-alpha;" start="4">
+                        <li>The cropped image will be saved to <code class="code-highlight">OUTPUT</code> folder</li>
+                    </ol>
+                    <p style="margin-top: 10px;">
+                        <img src="../assets/images/crop/crop-step7.png" alt="Output results" style="max-width: 1300px;">
+                    </p>
+                </li>
+            </ol>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">📊 Important Reminder</h3>
+                <p style="margin: 0; font-size: 18pt; font-weight: 700;">Spreadsheet crop parameters should also be updated.</p>
+            </div>
+
+            <h2 style="margin-top: 40px;">01.bat File Configuration</h2>
+            <p>
+                <img src="../assets/images/crop/crop-config.png" alt="01.bat configuration" style="max-width: 800px;">
+            </p>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/language.js"></script>
+</body>
+</html>

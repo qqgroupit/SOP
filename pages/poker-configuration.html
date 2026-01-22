@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>撲克配置 SOP - Poker Configuration SOP</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Chinese Content -->
+    <div data-lang="zh">
+        <div class="breadcrumb">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+
+        <header class="main-header">
+            <h1>撲克辨識配置文件</h1>
+            <p>POKER RECOGNITION CONFIG FILE</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-warning">
+                <strong>⚠️ 重要提示:</strong> 修改配置文件前請先備份原始文件
+            </div>
+
+            <h2>配置文件說明</h2>
+
+            <table class="config-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">配置範例圖</th>
+                        <th>配置參數說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="../assets/images/poker-configuration/image1.png" alt="撲克配置範例" style="max-width: 100%;">
+                        </td>
+                        <td>
+                            <h3>主要配置參數</h3>
+
+                            <h4>數據連接設定 (data)</h4>
+                            <ul>
+                                <li><code>connectionTimeout</code>: 5000ms</li>
+                                <li><code>host</code>: "127.0.0.1"</li>
+                                <li><code>port</code>: 9783</li>
+                                <li><code>transport</code>: "tcp"</li>
+                            </ul>
+
+                            <h4>辨識設定 (recognitionV8)</h4>
+                            <ul>
+                                <li><code>confidenceScorePolicy</code>: "replace"</li>
+                                <li><code>minConfidenceScore</code>: 70</li>
+                                <li><code>names</code>: "conf/poker.yaml"</li>
+                                <li><code>yoloGpuid</code>: 0</li>
+                                <li class="highlight-param"><strong>yoloWeights</strong>: <code class="code-highlight">"weights/yolo11.engine"</code></li>
+                            </ul>
+
+                            <h4>快照設定 (snapshot)</h4>
+                            <ul>
+                                <li><code>base</code>: "snapshot"</li>
+                                <li><code>bufferSize</code>: 10485760</li>
+                                <li><code>chunkSize</code>: 65535</li>
+                                <li><code>connectionTimeout</code>: 5000</li>
+                                <li><code>host</code>: "10.1.200.70"</li>
+                                <li><code>port</code>: 9600</li>
+                                <li><code>rotation</code>: 3</li>
+                            </ul>
+
+                            <h4>桌台設定 (tables)</h4>
+                            <ul>
+                                <li><code>calibrationOffsetX</code>: 5</li>
+                                <li><code>calibrationOffsetY</code>: 5</li>
+                                <li class="highlight-param"><strong>coordinates</strong>: 座位坐標陣列 (6個位置)</li>
+                                <li class="highlight-param"><strong>cropArguments</strong>: <code class="code-highlight">"750:200:545:440"</code></li>
+                                <li><code>enabled</code>: true</li>
+                                <li class="highlight-param"><strong>id</strong>: <code class="code-highlight">"C014"</code> (桌台編號)</li>
+                                <li><code>maxCardsPerGame</code>: 6</li>
+                                <li><code>minCardForCardBackNotify</code>: 4</li>
+                                <li><code>minEmpty</code>: 1</li>
+                                <li><code>minRepeat</code>: 15</li>
+                                <li class="highlight-param"><strong>mode</strong>: <code class="code-highlight">"recognition"</code></li>
+                                <li class="highlight-param"><strong>recognitionTimeout</strong>: <code class="code-highlight">3600000</code> (毫秒)</li>
+                                <li class="highlight-param"><strong>url</strong>: <code class="code-highlight">"rtsp://admin:[密碼]@[相機IP]/profile1/media.smp"</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">🔴 重要配置參數</h3>
+                <p>以下參數需要根據實際環境調整:</p>
+                <ul style="margin: 10px 0;">
+                    <li><strong>yoloWeights</strong>: 模型權重文件路徑</li>
+                    <li><strong>cropArguments</strong>: 裁剪參數 (格式: width:height:x:y)</li>
+                    <li><strong>id</strong>: 桌台唯一識別碼</li>
+                    <li><strong>url</strong>: RTSP攝像頭串流地址</li>
+                    <li><strong>coordinates</strong>: 每個座位的坐標範圍</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 40px;">配置文件範例</h2>
+            <pre class="code-block">{
+  "data" : {
+    "connectionTimeout" : 5000,
+    "host" : "127.0.0.1",
+    "port" : 9783,
+    "transport" : "tcp"
+  },
+  "logLevel" : "trace",
+  "maxCacheSize" : 30,
+  "recognitionV8" : {
+    "confidenceScorePolicy" : "replace",
+    "minConfidenceScore" : 70,
+    "names" : "conf/poker.yaml",
+    "yoloGpuid" : 0,
+    "yoloWeights" : <span class="highlight">"weights/yolo11.engine"</span>
+  },
+  "tables" : [
+    {
+      "calibrationOffsetX" : 5,
+      "calibrationOffsetY" : 5,
+      "coordinates" : [ ... ],
+      "cropArguments" : <span class="highlight">"750:200:545:440"</span>,
+      "enabled" : true,
+      "id" : <span class="highlight">"C014"</span>,
+      "mode" : <span class="highlight">"recognition"</span>,
+      "recognitionTimeout" : <span class="highlight">3600000</span>,
+      "url" : <span class="highlight">"rtsp://admin:***@10.155.11.114/profile1/media.smp"</span>
+    }
+  ]
+}</pre>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← 返回首頁</a>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div data-lang="en" style="display: none;">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+
+        <header class="main-header">
+            <h1>POKER RECOGNITION CONFIG FILE</h1>
+            <p>Configuration Guide for Poker Recognition System</p>
+        </header>
+
+        <div class="content-container">
+            <div class="alert alert-warning">
+                <strong>⚠️ Important:</strong> Back up the original file before making any changes
+            </div>
+
+            <h2>Configuration File Description</h2>
+
+            <table class="config-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Configuration Example</th>
+                        <th>Parameter Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="../assets/images/poker-configuration/image1.png" alt="Poker Configuration Example" style="max-width: 100%;">
+                        </td>
+                        <td>
+                            <h3>Main Configuration Parameters</h3>
+
+                            <h4>Data Connection Settings (data)</h4>
+                            <ul>
+                                <li><code>connectionTimeout</code>: 5000ms</li>
+                                <li><code>host</code>: "127.0.0.1"</li>
+                                <li><code>port</code>: 9783</li>
+                                <li><code>transport</code>: "tcp"</li>
+                            </ul>
+
+                            <h4>Recognition Settings (recognitionV8)</h4>
+                            <ul>
+                                <li><code>confidenceScorePolicy</code>: "replace"</li>
+                                <li><code>minConfidenceScore</code>: 70</li>
+                                <li><code>names</code>: "conf/poker.yaml"</li>
+                                <li><code>yoloGpuid</code>: 0</li>
+                                <li class="highlight-param"><strong>yoloWeights</strong>: <code class="code-highlight">"weights/yolo11.engine"</code></li>
+                            </ul>
+
+                            <h4>Snapshot Settings (snapshot)</h4>
+                            <ul>
+                                <li><code>base</code>: "snapshot"</li>
+                                <li><code>bufferSize</code>: 10485760</li>
+                                <li><code>chunkSize</code>: 65535</li>
+                                <li><code>connectionTimeout</code>: 5000</li>
+                                <li><code>host</code>: "10.1.200.70"</li>
+                                <li><code>port</code>: 9600</li>
+                                <li><code>rotation</code>: 3</li>
+                            </ul>
+
+                            <h4>Table Settings (tables)</h4>
+                            <ul>
+                                <li><code>calibrationOffsetX</code>: 5</li>
+                                <li><code>calibrationOffsetY</code>: 5</li>
+                                <li class="highlight-param"><strong>coordinates</strong>: Array of seat coordinates (6 positions)</li>
+                                <li class="highlight-param"><strong>cropArguments</strong>: <code class="code-highlight">"750:200:545:440"</code></li>
+                                <li><code>enabled</code>: true</li>
+                                <li class="highlight-param"><strong>id</strong>: <code class="code-highlight">"C014"</code> (Table ID)</li>
+                                <li><code>maxCardsPerGame</code>: 6</li>
+                                <li><code>minCardForCardBackNotify</code>: 4</li>
+                                <li><code>minEmpty</code>: 1</li>
+                                <li><code>minRepeat</code>: 15</li>
+                                <li class="highlight-param"><strong>mode</strong>: <code class="code-highlight">"recognition"</code></li>
+                                <li class="highlight-param"><strong>recognitionTimeout</strong>: <code class="code-highlight">3600000</code> (milliseconds)</li>
+                                <li class="highlight-param"><strong>url</strong>: <code class="code-highlight">"rtsp://admin:[密碼]@[相機IP]/profile1/media.smp"</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-danger" style="margin-top: 30px;">
+                <h3 style="margin: 0 0 10px 0;">🔴 Critical Configuration Parameters</h3>
+                <p>The following parameters need to be adjusted based on actual environment:</p>
+                <ul style="margin: 10px 0;">
+                    <li><strong>yoloWeights</strong>: Model weights file path</li>
+                    <li><strong>cropArguments</strong>: Crop parameters (format: width:height:x:y)</li>
+                    <li><strong>id</strong>: Unique table identifier</li>
+                    <li><strong>url</strong>: RTSP camera stream address</li>
+                    <li><strong>coordinates</strong>: Coordinate ranges for each seat</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 40px;">Configuration File Example</h2>
+            <pre class="code-block">{
+  "data" : {
+    "connectionTimeout" : 5000,
+    "host" : "127.0.0.1",
+    "port" : 9783,
+    "transport" : "tcp"
+  },
+  "logLevel" : "trace",
+  "maxCacheSize" : 30,
+  "recognitionV8" : {
+    "confidenceScorePolicy" : "replace",
+    "minConfidenceScore" : 70,
+    "names" : "conf/poker.yaml",
+    "yoloGpuid" : 0,
+    "yoloWeights" : <span class="highlight">"weights/yolo11.engine"</span>
+  },
+  "tables" : [
+    {
+      "calibrationOffsetX" : 5,
+      "calibrationOffsetY" : 5,
+      "coordinates" : [ ... ],
+      "cropArguments" : <span class="highlight">"750:200:545:440"</span>,
+      "enabled" : true,
+      "id" : <span class="highlight">"C014"</span>,
+      "mode" : <span class="highlight">"recognition"</span>,
+      "recognitionTimeout" : <span class="highlight">3600000</span>,
+      "url" : <span class="highlight">"rtsp://admin:***@10.155.11.114/profile1/media.smp"</span>
+    }
+  ]
+}</pre>
+        </div>
+
+        <div class="breadcrumb" style="margin-top: 30px;">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/language.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panel Demo — Click to open on right</title>
+  <style>
+    :root{--sidebar:240px;--gap:12px}
+    html,body{height:100%;margin:0;font-family:Segoe UI,Roboto,Arial}
+    .wrap{display:flex;height:100vh;gap:var(--gap)}
+    .sidebar{width:var(--sidebar);padding:16px;background:#f4f6f8;border-right:1px solid #e1e4e8}
+    .sidebar h2{margin:0 0 12px 0;font-size:16px}
+    .links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .links a{display:block;padding:8px 10px;border-radius:6px;color:#0b66c3;text-decoration:none}
+    .links a:hover{background:#e8f0fb}
+    .content{flex:1;display:flex;flex-direction:column}
+    .toolbar{padding:12px;border-bottom:1px solid #e9eef3;background:#fff}
+    .viewer{flex:1;border:0;width:100%}
+    .note{font-size:13px;color:#555}
+    @media (max-width:720px){.sidebar{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="sidebar">
+      <h2>Pages</h2>
+      <ul class="links">
+        <li><a href="panel-content1.html" data-src="panel-content1.html">Content — Page 1</a></li>
+        <li><a href="panel-content2.html" data-src="panel-content2.html">Content — Page 2</a></li>
+        <li><a href="https://example.com" data-src="https://example.com">External: example.com (may block framing)</a></li>
+      </ul>
+      <p class="note">Click a link to open it in the right panel.</p>
+    </aside>
+
+    <main class="content">
+      <div class="toolbar">
+        <strong>Viewer</strong>
+      </div>
+
+      <iframe id="viewer" class="viewer" src="panel-content1.html" title="Right panel viewer"></iframe>
+    </main>
+  </div>
+
+  <script>
+    // Delegate click events on sidebar links to update the iframe
+    document.querySelector('.links').addEventListener('click', function(e){
+      const a = e.target.closest('a');
+      if(!a) return;
+      e.preventDefault();
+      const src = a.dataset.src || a.href;
+      const viewer = document.getElementById('viewer');
+      // Use src for same-origin local files; external sites may block framing.
+      viewer.src = src;
+      // update focus for keyboard users
+      viewer.focus();
+    });
+  </script>
+</body>
+</html>
