@@ -6,6 +6,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Camera and Crop Parameters SOP - 相機與裁剪參數標準作業程序</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .menu-category {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .menu-category:hover {
+            box-shadow: 0 12px 30px rgba(69, 129, 142, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .menu-category:hover::before {
+            transform: scaleX(1);
+        }
+
+        .menu-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 18px;
+            font-size: 15pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-category li {
+            margin: 10px 0;
+            transition: all 0.2s ease;
+        }
+
+        .menu-category li:hover {
+            margin-left: 5px;
+        }
+
+        .menu-category a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13pt;
+        }
+
+        .menu-category a::before {
+            content: '▶';
+            font-size: 10pt;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-category a:hover {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .menu-category a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .subcategory {
+            margin-left: 20px;
+            font-size: 12pt;
+        }
+
+        .subcategory a {
+            color: #555;
+            font-weight: 500;
+            font-size: 12pt;
+        }
+
+        .subcategory a:hover {
+            color: var(--accent-color);
+        }
+
+        .welcome-text {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(69, 129, 142, 0.12);
+        }
+
+        .welcome-text h2 {
+            color: var(--primary-color);
+            font-size: 18pt;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .welcome-text p {
+            color: #444;
+            font-size: 13pt;
+            line-height: 1.8;
+        }
+    </style>
 </head>
 <body>
     <!-- Language Switcher -->
@@ -22,51 +157,102 @@
         </header>
 
         <div class="content-container">
-            <h2>歡迎</h2>
-            <p>這個系統包含了所有關於相機設置、撲克辨識系統和裁剪參數的標準作業程序文檔。請從下方選擇您需要的文檔。</p>
+            <div class="welcome-text">
+                <h2>歡迎</h2>
+                <p>這個系統包含了所有關於相機設置、撲克辨識系統和裁剪參數的標準作業程序文檔。請從下方的下拉菜單中選擇您需要的文檔。</p>
+            </div>
 
-            <div class="nav-container">
-                <!-- Recognition Camera SOP -->
-                <a href="pages/recognition-camera.html" class="nav-card">
-                    <h2>📷 辨識相機設定 SOP</h2>
-                    <p>靜態相機設定的完整指南，包括視頻、網絡、圖像和曝光設定。</p>
-                </a>
+            <div class="menu-container">
+                <!-- Category 1 -->
+                <div class="menu-category">
+                    <h3>1️⃣ 設備和設備設定</h3>
+                    <ul>
+                        <li><a href="pages/DEVICE-AND-EQUIPMENT-SETTING.html">設備和設備設定</a></li>
+                        <li class="subcategory">
+                            <a href="pages/IP-Camera-Settings.html">1.1 IP相機設定</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/CCTV-Camera-Settings.html">1.2 CCTV相機設定</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Moxa-Settings.html">1.3 Moxa設定</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Computer-Setup.html">1.4 電腦設置</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/NAS.html">1.5 NAS</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Recognition Camera XNP SOP -->
-                <a href="pages/recognition-camera-xnp.html" class="nav-card">
-                    <h2>📷 XNP辨識相機設定 SOP</h2>
-                    <p>Hanwha XNP-6320 PTZ相機的靜態設定標準作業程序。</p>
-                </a>
+                <!-- Category 2 -->
+                <div class="menu-category">
+                    <h3>2️⃣ 表格系統設定</h3>
+                    <ul>
+                        <li><a href="pages/TABLE-SYSTEM-CONFIGURATIONS.html">表格系統配置</a></li>
+                        <li class="subcategory">
+                            <a href="pages/Recognition-System.html">2.1 辨識系統</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Crop-Parameters.html">2.2 裁剪參數</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/poker-configuration.html">2.3 撲克配置</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Recognition Angle Adjustment XNP SOP -->
-                <a href="pages/angle-adjustment-xnp.html" class="nav-card">
-                    <h2>🔧 XNP相機角度調整 SOP</h2>
-                    <p>Hanwha XNP-6320 PTZ相機的角度調整詳細步驟。</p>
-                </a>
+                <!-- Category 3 -->
+                <div class="menu-category">
+                    <h3>3️⃣ 操作程序</h3>
+                    <ul>
+                        <li><a href="pages/OPERATION-PROCEDURES.html">操作程序</a></li>
+                        <li class="subcategory">
+                            <a href="pages/Table-System-Maintenance.html">3.1 表格系統維護</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Wrong-Value.html">3.2 錯誤值</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Incident-Report.html">3.3 事件報告</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Poker Configuration SOP -->
-                <a href="pages/poker-configuration.html" class="nav-card">
-                    <h2>🎴 撲克配置 SOP</h2>
-                    <p>撲克辨識系統的配置設定指南。</p>
-                </a>
+                <!-- Category 4 -->
+                <div class="menu-category">
+                    <h3>4️⃣ 應用程式和軟體</h3>
+                    <ul>
+                        <li><a href="pages/APPLICATION-AND-SOFTWARES.html">應用程式和軟體</a></li>
+                        <li class="subcategory">
+                            <a href="pages/OBS-Recording.html">4.1 OBS錄製</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Poker Calibration SOP -->
-                <a href="pages/poker-calibration.html" class="nav-card">
-                    <h2>🎯 撲克辨識校準 SOP</h2>
-                    <p>撲克辨識系統的校準程序和驗證步驟。</p>
-                </a>
+                <!-- Category 5 -->
+                <div class="menu-category">
+                    <h3>5️⃣ 故障排除</h3>
+                    <ul>
+                        <li><a href="pages/TROUBLESHOOTING.html">故障排除</a></li>
+                        <li class="subcategory">
+                            <a href="pages/IP-Camera-Troubleshooting.html">5.1 IP相機故障排除</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Crop Parameters SOP -->
-                <a href="pages/crop-parameters.html" class="nav-card">
-                    <h2>✂️ 裁剪參數 SOP</h2>
-                    <p>影像裁剪和標記的完整流程，用於辨識系統標記。</p>
-                </a>
-                
-                <!-- XNP Recognition Backup & Restore -->
-                <a href="pages/XNP-Recognition-Backup-Restore.html" class="nav-card">
-                    <h2>💾 XNP辨識備份與還原</h2>
-                    <p>說明如何備份與還原XNP辨識設定與資料。</p>
-                </a>
+                <!-- Legacy Documents -->
+                <div class="menu-category">
+                    <h3>📷 原始相機設定</h3>
+                    <ul>
+                        <li><a href="pages/recognition-camera.html">辨識相機設定 SOP</a></li>
+                        <li><a href="pages/recognition-camera-xnp.html">XNP辨識相機設定 SOP</a></li>
+                        <li><a href="pages/angle-adjustment-xnp.html">XNP相機角度調整 SOP</a></li>
+                        <li><a href="pages/poker-calibration.html">撲克辨識校準 SOP</a></li>
+                        <li><a href="pages/XNP-Recognition-Backup-Restore.html">XNP辨識備份與還原</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -84,51 +270,102 @@
         </header>
 
         <div class="content-container">
-            <h2>Welcome</h2>
-            <p>This system contains all Standard Operating Procedures documentation for camera settings, poker recognition systems, and crop parameters. Please select the document you need from below.</p>
+            <div class="welcome-text">
+                <h2>Welcome</h2>
+                <p>This system contains all Standard Operating Procedures documentation for camera settings, poker recognition systems, and crop parameters. Please select the document you need from the dropdown menu below.</p>
+            </div>
 
-            <div class="nav-container">
-                <!-- Recognition Camera SOP -->
-                <a href="pages/recognition-camera.html" class="nav-card">
-                    <h2>📷 Recognition Camera Setup SOP</h2>
-                    <p>Complete guide for static camera settings including video, network, image, and exposure configuration.</p>
-                </a>
+            <div class="menu-container">
+                <!-- Category 1 -->
+                <div class="menu-category">
+                    <h3>1️⃣ Device and Equipment Settings</h3>
+                    <ul>
+                        <li><a href="pages/DEVICE-AND-EQUIPMENT-SETTING.html">Device and Equipment Settings</a></li>
+                        <li class="subcategory">
+                            <a href="pages/IP-Camera-Settings.html">1.1 IP Camera Settings</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/CCTV-Camera-Settings.html">1.2 CCTV Camera Settings</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Moxa-Settings.html">1.3 Moxa Settings</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Computer-Setup.html">1.4 Computer Setup</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/NAS.html">1.5 NAS</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Recognition Camera XNP SOP -->
-                <a href="pages/recognition-camera-xnp.html" class="nav-card">
-                    <h2>📷 XNP Recognition Camera SOP</h2>
-                    <p>Standard operating procedures for Hanwha XNP-6320 PTZ camera static settings.</p>
-                </a>
+                <!-- Category 2 -->
+                <div class="menu-category">
+                    <h3>2️⃣ Table System Configurations</h3>
+                    <ul>
+                        <li><a href="pages/TABLE-SYSTEM-CONFIGURATIONS.html">Table System Configurations</a></li>
+                        <li class="subcategory">
+                            <a href="pages/Recognition-System.html">2.1 Recognition System</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Crop-Parameters.html">2.2 Crop Parameters</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/poker-configuration.html">2.3 Poker Configuration</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Recognition Angle Adjustment XNP SOP -->
-                <a href="pages/angle-adjustment-xnp.html" class="nav-card">
-                    <h2>🔧 XNP Camera Angle Adjustment SOP</h2>
-                    <p>Detailed steps for adjusting Hanwha XNP-6320 PTZ camera angles.</p>
-                </a>
+                <!-- Category 3 -->
+                <div class="menu-category">
+                    <h3>3️⃣ Operation Procedures</h3>
+                    <ul>
+                        <li><a href="pages/OPERATION-PROCEDURES.html">Operation Procedures</a></li>
+                        <li class="subcategory">
+                            <a href="pages/Table-System-Maintenance.html">3.1 Table System Maintenance</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Wrong-Value.html">3.2 Wrong Value</a>
+                        </li>
+                        <li class="subcategory">
+                            <a href="pages/Incident-Report.html">3.3 Incident Report</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Poker Configuration SOP -->
-                <a href="pages/poker-configuration.html" class="nav-card">
-                    <h2>🎴 Poker Configuration SOP</h2>
-                    <p>Configuration guide for poker recognition system settings.</p>
-                </a>
+                <!-- Category 4 -->
+                <div class="menu-category">
+                    <h3>4️⃣ Applications and Softwares</h3>
+                    <ul>
+                        <li><a href="pages/APPLICATION-AND-SOFTWARES.html">Applications and Softwares</a></li>
+                        <li class="subcategory">
+                            <a href="pages/OBS-Recording.html">4.1 OBS Recording</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Poker Calibration SOP -->
-                <a href="pages/poker-calibration.html" class="nav-card">
-                    <h2>🎯 Poker Recognition Calibration SOP</h2>
-                    <p>Calibration procedures and verification steps for poker recognition system.</p>
-                </a>
+                <!-- Category 5 -->
+                <div class="menu-category">
+                    <h3>5️⃣ Troubleshooting</h3>
+                    <ul>
+                        <li><a href="pages/TROUBLESHOOTING.html">Troubleshooting</a></li>
+                        <li class="subcategory">
+                            <a href="pages/IP-Camera-Troubleshooting.html">5.1 IP Camera Troubleshooting</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <!-- Crop Parameters SOP -->
-                <a href="pages/crop-parameters.html" class="nav-card">
-                    <h2>✂️ Crop Parameters SOP</h2>
-                    <p>Complete workflow for image cropping and labeling for recognition system training.</p>
-                </a>
-                
-                <!-- XNP Recognition Backup & Restore -->
-                <a href="pages/XNP-Recognition-Backup-Restore.html" class="nav-card">
-                    <h2>💾 XNP Recognition Backup & Restore</h2>
-                    <p>Instructions for backing up and restoring XNP recognition settings and data.</p>
-                </a>
+                <!-- Legacy Documents -->
+                <div class="menu-category">
+                    <h3>📷 Legacy Camera Setup</h3>
+                    <ul>
+                        <li><a href="pages/recognition-camera.html">Recognition Camera Setup SOP</a></li>
+                        <li><a href="pages/recognition-camera-xnp.html">XNP Recognition Camera SOP</a></li>
+                        <li><a href="pages/angle-adjustment-xnp.html">XNP Camera Angle Adjustment SOP</a></li>
+                        <li><a href="pages/poker-calibration.html">Poker Recognition Calibration SOP</a></li>
+                        <li><a href="pages/XNP-Recognition-Backup-Restore.html">XNP Recognition Backup & Restore</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
